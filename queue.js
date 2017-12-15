@@ -1,4 +1,4 @@
-var Queue = function() {
+function Queue() {
 
   this.storage = {};
   this.count = 0;
