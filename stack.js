@@ -1,27 +1,28 @@
-var Stack = function() {
+function Stack() {
 
-  this.storage = {};
+  var storage = [];
 
-  this.count = 0
+  this.addToStack = function(val) {
+    storage.push(val);
+  }
+
+  this.removeFromStack = function() {
+    if(storage.length) {
+      var poppedValue = storage.pop();
+      return poppedValue;      
+    } else {
+      return 'Stack is empty'
+    }
+
+  }
+
+  this.stackSize = function(val) {
+    return storage.length;
+  }
 
 };
 
-
-  Stack.prototype.push = function(val){
-    this.storage[this.count] = val;
-    this.count++;
-  }
-
-  Stack.prototype.pop = function(){
-   if (this.count){
-    this.count--;
-  }
-    return this.storage[this.count];
-  }
-
-  Stack.prototype.size = function(){
-   return this.count;
-  }
-
-
-
+var myStack = new Stack()
+myStack.addToStack(1)
+myStack.addToStack(2)
+myStack.removeFromStack()
